@@ -26,29 +26,6 @@ import os
 def hello():
 	print('hello')
 
-def draw_bird(x, y):
-    """
-    Draw a bird using a couple arcs.
-    """
-    arcade.draw_arc_outline(x, y, 20, 20, arcade.color.BLACK, 0, 90)
-    arcade.draw_arc_outline(x + 40, y, 20, 20, arcade.color.BLACK, 90, 180)
-
-
-def draw_pine_tree(x, y):
-    """
-    This function draws a pine tree at the specified location.
-    """
-    # Draw the triangle on top of the trunk
-    arcade.draw_triangle_filled(x + 40, y,
-                                x, y - 100,
-                                x + 80, y - 100,
-                                arcade.color.DARK_GREEN)
-
-    # Draw the trunk
-    arcade.draw_lrtb_rectangle_filled(x + 30, x + 50, y - 100, y - 140,
-                                      arcade.color.DARK_BROWN)
-
-
 
 
 # Set the working directory (where we expect to find files) to the same
@@ -90,10 +67,14 @@ arcade.draw_circle_filled(420, 525, 25, arcade.color.WHITE)
 arcade.draw_circle_filled(480, 515, 25, arcade.color.WHITE)
 arcade.draw_circle_filled(450, 525, 25, arcade.color.WHITE)
 
-#draw birds
-draw_bird(500,500)
-draw_pine_tree(300,300)
-hello()
+# Load and draw an image to the screen
+texture = arcade.load_texture("sprite.jpeg")
+scale = .05
+arcade.draw_texture_rectangle(540, 120, scale * texture.width,
+                              scale * texture.height, texture, 0)
+arcade.draw_texture_rectangle(240, 60, scale * texture.width,
+                              scale * texture.height, texture, 45)
+
 
 # Finish the render.
 # Nothing will be drawn without this.
