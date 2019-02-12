@@ -49,6 +49,8 @@ def draw_pine_tree(x, y):
                                       arcade.color.DARK_BROWN)
 
 
+
+
 # Set the working directory (where we expect to find files) to the same
 # directory this .py file is in. You can leave this out of your own
 # code, but it is needed to easily run the examples using "python -m"
@@ -87,6 +89,11 @@ arcade.draw_polygon_filled(point_list, arcade.color.SPANISH_VIOLET)
 arcade.draw_circle_filled(420, 525, 25, arcade.color.WHITE)
 arcade.draw_circle_filled(480, 515, 25, arcade.color.WHITE)
 arcade.draw_circle_filled(450, 525, 25, arcade.color.WHITE)
+
+#draw birds
+draw_bird(500,500)
+draw_pine_tree(300,300)
+hello()
 
 # Finish the render.
 # Nothing will be drawn without this.
