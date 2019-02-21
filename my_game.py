@@ -9,7 +9,7 @@ GREEN = ( 0, 255, 0)
 RED = ( 255, 0, 0)
 
 # Open a new window
-size = (700, 500)
+size = (1024, 640)
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("My First Game")
 
@@ -32,7 +32,7 @@ while carryOn:
      # --- Drawing code should go here
      # First, clear the screen to white. 
     screen.fill(WHITE)
-     #The you can draw different shapes and lines or add text to your background stage.
+     #Then you can draw different shapes and lines or add text to your background stage.
     pygame.draw.rect(screen, RED, [55, 200, 100, 70],0)
     pygame.draw.line(screen, GREEN, [0, 0], [100, 100], 5)
     pygame.draw.ellipse(screen, BLACK, [20,20,250,100], 2)
