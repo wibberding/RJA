@@ -4,15 +4,50 @@ pygame.init()
 
 # Define some colors
 BLACK = ( 0, 0, 0)
-WHITE = ( 255, 255, 255)
+BROWN = ( 153, 76, 0)
 GREEN = ( 0, 255, 0)
-RED = ( 255, 0, 0)
+BLUE = ( 0, 0, 255)
+
+#Constants
+DIRT = 0
+GRASS = 1
+WATER = 2
+COAL = 3
+
+#a dictionary linking resources to colors
+colors = {
+	DIRT : BROWN,
+	GRASS : GREEN,
+	WATER : BLUE,
+	COAL : BLACK
+}
 
 # Open a new window
 size = (1024, 640)
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("My First Game")
 
+TILESIZE = 64
+MAPWIDTH = 16
+MAPHEIGHT = 10
+DISPLAYSURF = pygame.display.set_mode((MAPWIDTH*TILESIZE, MAPHEIGHT*TILESIZE))
+# Draw Inital Screen
+	#ten tiles high and 16 tiles wide
+
+
+tilemap = [
+	[GRASS, COAL, DIRT, WATER, WATER, WATER, DIRT, DIRT, WATER, WATER, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS],
+	[GRASS, COAL, DIRT, WATER, WATER, WATER, DIRT, DIRT, WATER, WATER, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS],
+	[GRASS, COAL, DIRT, WATER, WATER, WATER, DIRT, DIRT, WATER, WATER, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS],
+	[GRASS, COAL, DIRT, WATER, WATER, WATER, DIRT, DIRT, WATER, WATER, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS],
+	[GRASS, COAL, DIRT, WATER, WATER, WATER, DIRT, DIRT, WATER, WATER, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS],
+	[GRASS, COAL, DIRT, WATER, WATER, WATER, DIRT, DIRT, WATER, WATER, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS],
+	[GRASS, COAL, DIRT, WATER, WATER, WATER, DIRT, DIRT, WATER, WATER, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS],
+	[GRASS, COAL, DIRT, WATER, WATER, WATER, DIRT, DIRT, WATER, WATER, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS],
+	[GRASS, COAL, DIRT, WATER, WATER, WATER, DIRT, DIRT, WATER, WATER, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS],
+	[GRASS, COAL, DIRT, WATER, WATER, WATER, DIRT, DIRT, WATER, WATER, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS]
+	
+]
 
 # The loop will carry on until the user exit the game (e.g. clicks the close button).
 carryOn = True
@@ -30,12 +65,14 @@ while carryOn:
      # --- Game logic should go here
  
      # --- Drawing code should go here
-     # First, clear the screen to white. 
-    screen.fill(WHITE)
+     # First, draw background map. 
+    for row in range(MAPHEIGHT):
+    	#loop through each column in the row
+    	for column in range(MAPWIDTH):
+    		#draw resources on map
+    		pygame.draw.rect(DISPLAYSURF, colors[tilemap[row][column], (column*TILESIZE,row*TILESIZE,TILESIZE,TILESIZE) 
+
      #Then you can draw different shapes and lines or add text to your background stage.
-    pygame.draw.rect(screen, RED, [55, 200, 100, 70],0)
-    pygame.draw.line(screen, GREEN, [0, 0], [100, 100], 5)
-    pygame.draw.ellipse(screen, BLACK, [20,20,250,100], 2)
  
  
      # --- Go ahead and update the screen with what we've drawn.
