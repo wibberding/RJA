@@ -1,2 +1,2 @@
 # RJA
-Code for RJA Class
+Tile based game for RJA class
