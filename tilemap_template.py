@@ -9,10 +9,10 @@ COAL = 3
 
 #a dictionary linking resources to colors
 textures = 	{
-				DIRT : pygame.image.load('dirt.png'),
-				GRASS : pygame.image.load('grass.png'),
-				WATER : pygame.image.load('water.png'),
-				COAL : pygame.image.load('coal.png')
+				DIRT : pygame.image.load('images/dirt.png'),
+				GRASS : pygame.image.load('images/grass.png'),
+				WATER : pygame.image.load('images/water.png'),
+				COAL : pygame.image.load('images/coal.png')
 			}
 
 #a list representing our tilemap
