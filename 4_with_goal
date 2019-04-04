@@ -24,6 +24,7 @@ DIRT = 0
 GRASS = 1
 WATER = 2
 COAL = 3
+GOAL = 4
 
 #Wall objects numbered above 10
 WALL = 20
@@ -34,12 +35,13 @@ textures = 	{
 				GRASS : pygame.image.load('images/grass.png'),
 				WATER : pygame.image.load('images/water.png'),
 				COAL : pygame.image.load('images/coal.png'),
-				WALL : pygame.image.load('images/wall.png')
+				WALL : pygame.image.load('images/wall.png'),
+				GOAL : pygame.image.load('images/goal.png')
 			}
 
 #a list representing our tilemap
 tilemap = 	[
-				[GRASS, COAL, DIRT, WALL, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, DIRT ],
+				[GRASS, COAL, DIRT, WALL, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GOAL ],
 				[WATER, WATER, GRASS, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS],
 				[GRASS, COAL, DIRT, WALL, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS,COAL, GRASS, WATER],
 				[DIRT, GRASS, COAL, WALL, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS],
