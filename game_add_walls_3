@@ -3,29 +3,35 @@ from pygame.locals import *
 
 #Functions
 def can_move(x,y):
-	#See if there is a wall at location.
-		#return true if player can move there and false if not.
+	if tilemap[y][x] < 10:
+		return True
+	else:
+		return False
 
 #constants representing the different resources
-DIRT = "dirt"
-GRASS = "grass"
-WATER = "water"
-COAL = "coal"
+DIRT = 0
+GRASS = 1
+WATER = 2
+COAL = 3
+
+#Wall objects numbered above 10
+WALL = 20
 
 #a dictionary linking resources to colors
 textures = 	{
 				DIRT : pygame.image.load('images/dirt.png'),
 				GRASS : pygame.image.load('images/grass.png'),
 				WATER : pygame.image.load('images/water.png'),
-				COAL : pygame.image.load('images/coal.png')
+				COAL : pygame.image.load('images/coal.png'),
+				WALL : pygame.image.load('images/wall.png')
 			}
 
 #a list representing our tilemap
 tilemap = 	[
-				[GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, DIRT ],
+				[GRASS, COAL, DIRT, WALL, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, DIRT ],
 				[WATER, WATER, GRASS, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS],
-				[GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS,COAL, GRASS, WATER],
-				[DIRT, GRASS, COAL, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS],
+				[GRASS, COAL, DIRT, WALL, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS,COAL, GRASS, WATER],
+				[DIRT, GRASS, COAL, WALL, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS],
 				[GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS,GRASS, WATER, DIRT ],
 				[GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, DIRT ],
 				[WATER, WATER, GRASS, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS, COAL, DIRT, GRASS],
@@ -55,7 +61,7 @@ while True:
 	#get all the user events
 	for event in pygame.event.get():
 		#2 See game events in the console
-		print(event)
+		# print(event)
 		#if the user wants to quit
 		if event.type == QUIT:
 			#end the game and close the window
