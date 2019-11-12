@@ -1,7 +1,7 @@
 from random import randint
-adjList=["wild","fluffy","hilarious"]
-placeList=["Chicago","China","Brazil"]
-nounList=["telephone", "karate", "toilet"]
+adjList=["wild","fluffy","hilarious", "soft", "yellow", "green"]
+placeList=["Chicago","China","Brazil", "Oregon", "Disneyland", "the ocean"]
+nounList=["telephone", "karate", "green bean", "taco", "car", "hill"]
 
 index1=randint(0,len(adjList)-1)
 adj1=adjList[index1]
